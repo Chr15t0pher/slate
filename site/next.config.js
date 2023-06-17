@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = {
-  webpack: config => {
+  webpack: (config, { defaultLoaders }) => {
     config.module.rules.push({
       test: /\.js$/,
       enforce: 'pre',
@@ -13,6 +13,15 @@ module.exports = {
         },
       ],
     })
+
+    config.module.rules.push({
+      test: /\.tsx?$/,
+      include: [path.resolve(__dirname, '../packages/slate')],
+      use: [
+        defaultLoaders.babel
+      ]
+    })
+
     return config
   },
 }

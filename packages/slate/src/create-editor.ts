@@ -88,6 +88,7 @@ import {
  * Create a new Slate `Editor` object.
  */
 export const createEditor = (): Editor => {
+  console.log(222)
   const editor: Editor = {
     children: [],
     operations: [],

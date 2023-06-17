@@ -200,7 +200,7 @@ function factory(pkg, options = {}) {
  */
 
 export default [
-  ...factory(Core),
+  // ...factory(Core),
   ...factory(History),
   ...factory(Hyperscript),
   ...factory(React),
